@@ -35,3 +35,8 @@ class IndexView(generic.TemplateView):
 		context["portfolio"] = portfolio
 		context['skills']= skills
 		return context
+
+class ContactView(generic.FormView):
+	template_name = "resume/contact.html"
+	form_class = ContactForm
+	success_url = "/"
