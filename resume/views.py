@@ -39,4 +39,19 @@ class IndexView(generic.TemplateView):
 class ContactView(generic.FormView):
 	template_name = "resume/contact.html"
 	form_class = ContactForm
-	success_url = "/"
+	success_url = "/home"
+
+
+	def form_valid(self, form):
+		form.save()
+		messages.success(self.request, 'Thank you. We will be in touch soon.')
+		return super().form_valid(form)
+	
+
+class BlogView(generic.ListView):
+	template_name = "resume/blog.html"
+	model = Blog
+	def get_queryset(self):
+		return super().get_queryset().filter(is_active=True)
+
+	
