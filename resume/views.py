@@ -54,4 +54,9 @@ class BlogView(generic.ListView):
 	def get_queryset(self):
 		return super().get_queryset().filter(is_active=True)
 
-	
+
+class PortfolioView(generic.ListView):
+	template_name = "resume/Portfolio.html"
+	model = Portfolio
+	def get_queryset(self):
+		return super().get_queryset().filter(is_active=True)
