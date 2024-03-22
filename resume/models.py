@@ -24,7 +24,7 @@ class UserProfile(models.Model):
         verbose_name_plural = 'User Profiles'
         verbose_name = 'User Profile'
     
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User,related_name='taha', on_delete=models.CASCADE)
     avatar = models.ImageField(blank=True, null=True, upload_to="avatar")
     title = models.CharField(max_length=200, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
