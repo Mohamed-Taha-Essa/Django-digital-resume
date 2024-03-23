@@ -1,3 +1,4 @@
+{% extends "base.html" %}
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
@@ -22,7 +23,7 @@
     <section>
       <div class="lightBg">
         <div class="container">
-          <form  method="post" class="form">
+          <form  method="POST" class="form">
             {% csrf_token %}
         
             {% bootstrap_form form %}
@@ -38,6 +39,7 @@
         </div>
       </div>
     </section>
+
     <!-- ================================
     End Content
     ================================= -->
