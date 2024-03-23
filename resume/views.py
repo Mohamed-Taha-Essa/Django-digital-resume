@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.contrib.auth.models import User
 # Create your views here.
 from django.shortcuts import render
 from django.contrib import messages
@@ -28,12 +28,14 @@ class IndexView(generic.TemplateView):
 		blogs = Blog.objects.filter(is_active=True)
 		portfolio = Portfolio.objects.filter(is_active=True)
 		skills = Skill.objects.all()
+		user  =User.objects.last()
 		
 		context["testimonials"] = testimonials
 		context["certificates"] = certificates
 		context["blogs"] = blogs
 		context["portfolio"] = portfolio
 		context['skills']= skills
+		context['user'] =user
 		return context
 
 class ContactView(generic.FormView):
