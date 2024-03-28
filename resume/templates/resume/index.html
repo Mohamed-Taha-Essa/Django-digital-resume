@@ -17,11 +17,11 @@
             <div class="col-md">
               <div class="bannerContent">
                 <h1 class="xlTitle pb-3">Hi,I am {{user.first_name|title}} <br> {{user.taha.title}}</h1>
-                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                <p>{{user.taha.bio}}</p>
                 <div class="bannerBtnCol">
                   <div class="row">
                     <div class="col-auto">
-                      <a download href="javascript:void(0)" class="btn btnPrimary">Download Resume</a>
+                      <a download href="{{user.taha.cv.url }}" class="btn btnPrimary">Download Resume</a>
                     </div>
                     <div class="col-auto">
                       <a href="/home/contact" class="btn btnOutline">Contact</a>
